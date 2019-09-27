@@ -1,0 +1,98 @@
+<template>
+    <div>
+        <div class="recommend-title">周末去哪儿</div>
+        <ul>
+            <li class="item" border-bottom v-for="item in recommendList" :key="item.id">
+                <div class="item-img-wrapper"></div>
+                    <div class="item-img-wrapper">
+                        <img class="item-img" :src="item.imgUrl"/>
+                    </div>
+
+                     <div class="item-info">
+                        <p class="item-title">{{item.title}}</p>
+                        <p class="item-desc">{{item.desc}}</p>
+                        <button class="item-button">查看详情</button>    
+                    </div>  
+                
+
+            </li>
+        </ul>
+    </div>    
+</template>
+<script>
+export default {
+    name:'HomeWeekend',
+    data(){
+       return{
+            recommendList:[{
+            id :'001',
+            imgUrl :'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
+            title:'北京温泉排行榜',
+            desc:'细数北京温泉，温暖你的冬天'
+        },{
+             id :'002',
+             imgUrl :'http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg',
+             title:'北京必游TOP10',
+             desc:'北京专业级滑雪圣地'
+
+        },{
+             id :'003',
+             imgUrl :'http://img1.qunarzz.com/sight/source/1505/b2/fde1bfcd057a52.jpg_r_640x214_bbf3fa44.jpg',
+             title:'儿童剧场，孩子的乐园',
+             desc:'带宝贝观看演出，近距离体验艺术的无穷魅力'
+
+        },{
+             id :'004',
+             imgUrl :'http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg',
+             title:'寻找北京的皇城范儿',
+             desc:'数百年的宫廷庙宇，至今依旧威严霸气'
+
+        },{
+             id :'005',
+             imgUrl :'http://img1.qunarzz.com/sight/source/1505/ce/bc89bc2f0e33ea.jpg_r_640x214_3e408453.jpg',
+             title:'学生最爱的博物馆',
+             desc:'周末干嘛？北京很多博物馆已经免费开放啦'
+
+        }]
+       }
+    }
+    
+}
+</script>
+<style lang="stylus" scoped>
+@import '~styles/mixins.styl'
+    .recommend-title
+        margin-top :.2rem;
+        line-height :.8rem;
+        background :#eee;
+        text-indent :.2rem
+    .item-img-wrapper
+
+    .item-img
+            width :1.7rem;
+            height:1.7rem;
+            padding : .1rem;
+    .item-info
+        flex: 1 
+        padding .1rem;
+        min-width 0
+        .item-title
+            line-height .54rem
+            font-size .32rem
+            ellipsis()
+
+        .item-desc   
+            line-height .4rem
+            color #ccc
+            ellipsis()
+
+        .item-button
+            background #ff9300
+            padding 0 .2rem
+            border-redius .06rem
+            margin-top .2rem
+            color #fff
+            line-height .44rem
+            margin-top .16rem
+
+</style>
